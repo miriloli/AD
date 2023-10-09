@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+
 
 public class Coches {
 
@@ -7,9 +7,9 @@ public class Coches {
     private Integer ano;
     private String matricula;
 
-    private static Integer contadorDeCoches = 0;
+    public static Integer contadorDeCoches = 0;
 
-    private ArrayList<Coches> coches; 
+    
 
     public Coches(){
 
@@ -52,9 +52,10 @@ public class Coches {
         this.matricula = nuevaMatricula;
     }
 
+    public static String imprimeDatos(Coches coche){
 
-    public void añadeCoche(Coches coche){
+        return "La marca es:  "+coche.getMarca()+"El modelo es:  "+coche.modelo+"El año de fabricación es:   "+coche.getAno()+"La matrícula es:  "+coche.getMatricula();
 
-        coches.add(coche);
     }
+   
 }

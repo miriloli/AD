@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Concesionario {
@@ -5,6 +6,8 @@ public class Concesionario {
     public static void main(String[] args) throws Exception {
 
         pedirCoches();
+        imprimeCoches();
+        
 
         /*
          * Esta tarea consiste en realizar las siguientes tareas:
@@ -68,11 +71,26 @@ public class Concesionario {
          * 5.Una vez hayamos acabado de introducir los datos debemos imprimir la
          * variable de clase para comprobar que se ha incrementado correctamente y hacer
          * otro bucle que recorra el ArrayList y que imprima por pantalla la información
-         * de cada objet
+         * de cada objeto
          */
 
     }
 
+    private static ArrayList<Coches> coches = new ArrayList<>();
+    
+
+    public static void añadeCoche(Coches coche) {
+
+        coches.add(coche);
+    }
+
+    public static void imprimeCoches() {
+        for (Coches elemento : coches) {
+            System.out.println(elemento.imprimeDatos(elemento));
+        }//TODO esto no tiene sentido no? 
+    }
+
+   
 
     private static void pedirCoches() {
 
@@ -81,22 +99,23 @@ public class Concesionario {
         Integer cantidadCoches = scanner.nextInt();
 
         for (int i = 0; i < cantidadCoches; i++) {
-            System.out.println("Introduzca la marca del coche: ");
+            System.out.println("Introduzca la marca del coche: \n");
             String marca = scanner.next();
-            System.out.println("Introduzca el modelo del coche: ");
+            System.out.println("Introduzca el modelo del coche: \n");
             String modelo = scanner.next();
-            System.out.println("Introduzca el año de fabricación del coche: ");
+            System.out.println("Introduzca el año de fabricación del coche: \n");
             Integer ano = scanner.nextInt();
-            System.out.println("Introduzca la matrícula del coche: ");
+            System.out.println("Introduzca la matrícula del coche: \n");
             String matricula = scanner.next();
-            Coches coche=new Coches(marca, modelo, ano, matricula);
-            coche.añadeCoche(coche);
-            scanner.close();
+            Coches coche = new Coches(marca, modelo, ano, matricula);
+            añadeCoche(coche);
+            System.out.println(coches.size());
+            
+            
 
         }
+        scanner.close();
 
     }
-    // TODO es un lio.. se me solapan los scanner...
-    // no se como guardar cada dato de cada vuelta en cada número de coche
-    // correspondiente..
+    
 }

@@ -52,9 +52,9 @@ public class Coches {
         this.matricula = nuevaMatricula;
     }
 
-    public static String imprimeDatos(Coches coche){
+    public String imprimeDatos(){
 
-        return "La marca es:  "+coche.getMarca()+"El modelo es:  "+coche.modelo+"El año de fabricación es:   "+coche.getAno()+"La matrícula es:  "+coche.getMatricula();
+        return "La marca es:  "+this.marca+"El modelo es:  "+this.modelo+"El año de fabricación es:   "+this.ano+"La matrícula es:  "+this.matricula;
 
     }
    

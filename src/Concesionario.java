@@ -86,8 +86,8 @@ public class Concesionario {
 
     public static void imprimeCoches() {
         for (Coches elemento : coches) {
-            System.out.println(elemento.imprimeDatos(elemento));
-        }//TODO esto no tiene sentido no? 
+            System.out.println(elemento.imprimeDatos());
+        }
     }
 
    

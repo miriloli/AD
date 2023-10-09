@@ -3,13 +3,8 @@ import java.util.Scanner;
 
 public class Concesionario {
 
-    public static void main(String[] args) throws Exception {
 
-        pedirCoches();
-        imprimeCoches();
-        
-
-        /*
+      /*
          * Esta tarea consiste en realizar las siguientes tareas:
          * 
          * Hay que definir una clase Coche (Coche.java) con las siguientes
@@ -74,10 +69,15 @@ public class Concesionario {
          * de cada objeto
          */
 
+    public static void main(String[] args) throws Exception {
+
+        pedirCoches();
+        imprimeCoches();
+
+
     }
 
     private static ArrayList<Coches> coches = new ArrayList<>();
-    
 
     public static void añadeCoche(Coches coche) {
 
@@ -89,8 +89,6 @@ public class Concesionario {
             System.out.println(elemento.imprimeDatos());
         }
     }
-
-   
 
     private static void pedirCoches() {
 
@@ -109,13 +107,11 @@ public class Concesionario {
             String matricula = scanner.next();
             Coches coche = new Coches(marca, modelo, ano, matricula);
             añadeCoche(coche);
-            System.out.println(coches.size());
             
-            
-
         }
+        
         scanner.close();
-
+        System.out.println("El número de coches total es:  "+Coches.contadorDeCoches);
     }
-    
+
 }

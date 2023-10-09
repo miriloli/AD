@@ -1,5 +1,4 @@
 
-
 public class Coches {
 
     private String marca;
@@ -7,15 +6,19 @@ public class Coches {
     private Integer ano;
     private String matricula;
 
-    public static Integer contadorDeCoches = 0;
+    public static Integer contadorDeCoches=0;
 
-    
-
-    public Coches(){
+    public Coches() {
 
     }
 
     public Coches(String marca, String modelo, Integer ano, String matricula) {
+
+        this.marca=marca;
+        this.modelo=modelo;
+        this.ano=ano;
+        this.matricula=matricula;
+        contadorDeCoches++;
 
     }
 
@@ -52,10 +55,11 @@ public class Coches {
         this.matricula = nuevaMatricula;
     }
 
-    public String imprimeDatos(){
+    public String imprimeDatos() {
 
-        return "La marca es:  "+this.marca+"El modelo es:  "+this.modelo+"El año de fabricación es:   "+this.ano+"La matrícula es:  "+this.matricula;
+        return "La marca es:  " + this.marca + " El modelo es:  " + this.modelo + " El año de fabricación es:   "
+                + this.ano + " La matrícula es:  " + this.matricula;
 
     }
-   
+
 }
